@@ -11,6 +11,7 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { VueLoaderPlugin } = require("vue-loader");
+let themeConfig = require("./theme-config");
 
 /**
  * List of node_modules to include in webpack bundle
@@ -61,6 +62,9 @@ let rendererConfig = {
             loader: "less-loader",
             options: {
               lessOptions: {
+                modifyVars: {
+                  ...themeConfig,
+                },
                 javascriptEnabled: true,
               },
             },

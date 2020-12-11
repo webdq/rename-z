@@ -1,6 +1,9 @@
-import { app, BrowserWindow } from "electron";
+const { app, BrowserWindow, Menu } = require("electron");
+const path = require("path");
 
 let isDev = process.env.NODE_ENV === "development";
+
+process.env["ELECTRON_DISABLE_SECURITY_WARNINGS"] = "true";
 
 /**
  * Set `__static` path to static files in production
@@ -17,13 +20,19 @@ const winURL = isDev
   ? `http://localhost:9080`
   : `file://${__dirname}/index.html`;
 
+if (!isDev) {
+  Menu.setApplicationMenu(null);
+}
+
 function createWindow() {
   mainWindow = new BrowserWindow({
     height: 800,
     width: 1280,
     center: true,
+    icon: path.join(__static, "/256x256.png"),
     webPreferences: {
-      // preload: "./preload.js",
+      webSecurity: false,
+      preload: path.resolve(__dirname, "preload.js"),
       nodeIntegration: true,
       enableRemoteModule: true,
     },
