@@ -32,13 +32,15 @@ function createWindow() {
     icon: path.join(__static, "/256x256.png"),
     webPreferences: {
       webSecurity: false,
-      preload: path.resolve(__dirname, "preload.js"),
+      preload: path.join(__static, "preload.js"),
       nodeIntegration: true,
       enableRemoteModule: true,
     },
   });
 
   mainWindow.loadURL(winURL);
+
+  // mainWindow.webContents.openDevTools();
 
   mainWindow.on("closed", () => {
     mainWindow = null;

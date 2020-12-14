@@ -89,7 +89,7 @@ export default {
       this.form.caps = e.target.checked;
     },
     allChange(e) {
-      this.form.checked = e.target.checked;
+      this.form.all = e.target.checked;
     },
     saveClick() {
       this.isSubmit = true;

@@ -35,6 +35,10 @@ export default {
   padding: 40px;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  flex: auto;
+  position: relative;
+  z-index: 2;
   .bl-sider {
     display: flex;
     flex-direction: column;

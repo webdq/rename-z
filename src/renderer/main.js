@@ -4,8 +4,8 @@ import axios from "axios";
 import App from "./App";
 import router from "./router";
 import store from "./store";
-import "@/assets/css/base.scss";
 import "./core/lazy_use";
+import "@/assets/css/base.scss";
 
 if (!process.env.IS_WEB) Vue.use(require("vue-electron"));
 Vue.http = Vue.prototype.$http = axios;

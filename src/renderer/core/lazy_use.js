@@ -34,6 +34,7 @@ import {
 // import PageLoading from "@/components/PageLoading";
 // import PermissionHelper from "@/utils/helper/permission";
 // import "./directives/action";
+import "./directives/transfer-dom";
 
 Vue.use(ConfigProvider);
 Vue.use(Layout);

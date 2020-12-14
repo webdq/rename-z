@@ -6,6 +6,9 @@
     @drop.stop.prevent="drop"
     class="upload"
     :class="{ active: dragHover }"
+    v-transfer-dom
+    :data-transfer="transfer"
+    v-show="visible"
   >
     <div class="upload-content">
       <p class="upload-icon"><a-icon type="inbox" /></p>
@@ -16,6 +19,16 @@
 
 <script>
 export default {
+  props: {
+    visible: {
+      type: Boolean,
+      default: false,
+    },
+    transfer: {
+      type: Boolean,
+      default: true,
+    },
+  },
   data() {
     return {
       dragHover: false,
@@ -23,7 +36,6 @@ export default {
   },
   methods: {
     dragenter(e) {
-      console.log(e);
       this.$emit("dragenter");
       this.dragHover = true;
     },

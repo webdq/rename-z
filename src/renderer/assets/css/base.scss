@@ -1,13 +1,12 @@
+body {
+  background-color: #ffaaae;
+}
+
 #app {
-  min-height: 100vh;
-  background-color: #ffd8d8;
-  background-image: linear-gradient(
-    315deg,
-    #ff9a9e 30%,
-    #ffd8d8 90%,
-    #fad0c4 100%
-  );
-  position: relative;
+  min-height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 @function multiple-box-shadow($n) {
@@ -31,7 +30,7 @@ $shadows-big: multiple-box-shadow(100);
 }
 
 .stars {
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   width: 100%;
@@ -104,7 +103,7 @@ $shadows-big: multiple-box-shadow(100);
   border-radius: 10px;
   background: #ffffffeb;
   padding: 20px;
-  box-shadow: 0 8px 30px #ff9a9e;
+  box-shadow: 0 8px 30px #f58c90;
 }
 .op-row {
   display: flex;

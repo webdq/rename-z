@@ -95,7 +95,7 @@
       </div>
     </div>
 
-    <UploadLayer v-show="showUpload" @drop="drop"></UploadLayer>
+    <UploadLayer :visible="showUpload" @drop="drop"></UploadLayer>
   </div>
 </template>
 

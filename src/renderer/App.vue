@@ -1,12 +1,12 @@
 <template>
   <a-config-provider :locale="locale">
     <div id="app">
+      <router-view></router-view>
       <div class="stars">
         <div class="stars1"></div>
         <div class="stars2"></div>
         <div class="stars3"></div>
       </div>
-      <router-view></router-view>
     </div>
   </a-config-provider>
 </template>
