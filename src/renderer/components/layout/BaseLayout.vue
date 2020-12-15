@@ -11,6 +11,9 @@
       <div class="bl-content panel-box">
         <router-view></router-view>
       </div>
+      <div class="bl-footer ">
+        <MFooter></MFooter>
+      </div>
     </div>
   </div>
 </template>
@@ -18,6 +21,7 @@
 import SiderAction from "@/components/common/SiderAction";
 import TabNav from "@/components/common/TabNav";
 import FooterBing from "@/components/common/FooterBing";
+import MFooter from "@/components/common/MFooter";
 export default {
   data() {
     return {};
@@ -26,6 +30,7 @@ export default {
     SiderAction,
     TabNav,
     FooterBing,
+    MFooter,
   },
 };
 </script>
@@ -54,6 +59,9 @@ export default {
     }
     .bl-content {
       min-height: 500px;
+    }
+    .bl-footer {
+      margin-top: 10px;
     }
   }
 }

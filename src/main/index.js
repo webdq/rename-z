@@ -1,5 +1,7 @@
-const { app, BrowserWindow, Menu } = require("electron");
+const { app, BrowserWindow, Menu, ipcMain } = require("electron");
 const path = require("path");
+const checkForUpdates = require("./updater.js");
+const packageJson = require("../../package.json");
 
 let isDev = process.env.NODE_ENV === "development";
 
@@ -59,4 +61,12 @@ app.on("activate", () => {
   if (mainWindow === null) {
     createWindow();
   }
+});
+
+ipcMain.on("update", () => {
+  checkForUpdates({});
+});
+
+ipcMain.on("get-version", (event, arg) => {
+  event.reply("get-version", packageJson.version);
 });
