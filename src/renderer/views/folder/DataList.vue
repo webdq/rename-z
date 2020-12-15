@@ -62,7 +62,7 @@
           justify="space-between"
         >
           <a-col class="list-col" :span="colSpan[0]">
-            {{ item.newName }}
+            {{ item.previewName }}
           </a-col>
           <a-col class="list-col" :span="colSpan[1]">
             <a-icon

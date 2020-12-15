@@ -95,8 +95,8 @@ export default {
         }
       });
     },
-    valid() {
-      let name1 = this.fileList.map((item) => item.previewPath);
+    valid(list) {
+      let name1 = list.map((item) => item.previewPath);
       let name2 = [...new Set(name1)];
       return name1.length === name2.length;
     },
@@ -105,15 +105,19 @@ export default {
       this.fileList = list;
     },
     async start() {
-      let flag = this.valid();
-      if (!flag) {
-        this.$message.warning("有文件重名");
-        return;
-      }
       if (this.actionList.length === 0 || this.fileList.length === 0) return;
       this.isStart = true;
-      let list = await window.renameStart(this.actionList, this.fileList);
-      this.fileList = list;
+      let previewNameList = window.createPreviewName(
+        this.actionList,
+        this.fileList
+      );
+      let flag = this.valid(previewNameList);
+      if (!flag) {
+        this.$message.warning("有文件重名");
+      } else {
+        let list = await window.renameStart(this.actionList, this.fileList);
+        this.fileList = list;
+      }
       this.isStart = false;
     },
   },
