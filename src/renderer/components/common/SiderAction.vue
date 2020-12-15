@@ -16,6 +16,7 @@
         <draggable
           @start="dragStart"
           @end="dragEnd"
+          :move="checkMove"
           v-model="actionList"
           v-bind="dragOptions"
           handle=".action-item"
@@ -31,8 +32,16 @@
               </div>
               <div class="action-btn-row">
                 <a-space>
-                  <a-button @click="edit(item)" size="small">修改</a-button>
-                  <a-button @click="remove(item.id)" size="small"
+                  <a-button
+                    :disabled="item.isNotEdit"
+                    @click="edit(item)"
+                    size="small"
+                    >修改</a-button
+                  >
+                  <a-button
+                    :disabled="item.isNotRemove"
+                    @click="remove(item.id)"
+                    size="small"
                     >删除</a-button
                   >
                 </a-space>
@@ -116,6 +125,10 @@ export default {
     },
     dragEnd() {
       window.__drag = false;
+    },
+    checkMove: function(e) {
+      let type = e.draggedContext.element.type;
+      return type !== "mapping-name";
     },
   },
 };

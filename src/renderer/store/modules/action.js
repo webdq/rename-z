@@ -21,11 +21,18 @@ const mutations = {
     );
   },
   REMOVE_ALL_ACTION(state, payload) {
-    state.actionList = [];
+    if (payload) {
+      state.actionList = [];
+    } else {
+      state.actionList = state.actionList.filter((item) => item.isNotRemove);
+    }
   },
 };
 
 const actions = {
+  updateAction({ commit }, payload) {
+    commit("UPDATE_ACTION", payload);
+  },
   addAction({ commit }, payload) {
     commit("ADD_ACTION", payload);
   },
@@ -35,8 +42,8 @@ const actions = {
   removeAction({ commit }, payload) {
     commit("REMOVE_ACTION", payload);
   },
-  removeAllAction({ commit }) {
-    commit("REMOVE_ALL_ACTION");
+  removeAllAction({ commit }, payload) {
+    commit("REMOVE_ALL_ACTION", payload);
   },
 };
 

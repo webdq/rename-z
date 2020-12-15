@@ -6,7 +6,7 @@
           >修改文件名</router-link
         >
         <router-link to="/page/folder" class="tab-nav-item"
-          >文件夹文件映射</router-link
+          >修改映射文件名称</router-link
         >
       </a-space>
     </div>
