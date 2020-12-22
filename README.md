@@ -1,25 +1,73 @@
-# rename-z
+### RenameZ 简单，方便，批量修改文件名
 
-> An electron-vue project
+### 面对的使用场景
 
-#### Build Setup
+1. 文件名杂乱，强迫症不能忍，或者想自定义文件名格式
 
-``` bash
-# install dependencies
-npm install
+[![rsg2Bn.jpg](https://s3.ax1x.com/2020/12/23/rsg2Bn.jpg)](https://imgchr.com/i/rsg2Bn)
 
-# serve with hot reload at localhost:9080
-npm run dev
+2. 多字幕文件名想匹配多视频文件名，打开视频可自动加载字幕
 
-# build electron application for production
-npm run build
+[![rs2V4f.jpg](https://s3.ax1x.com/2020/12/23/rs2V4f.jpg)](https://imgchr.com/i/rs2V4f)
 
+### 主要功能
 
-# lint all JS/Vue component files in `src/`
-npm run lint
+1. 简单修改文件名
 
-```
+2. 映射主文件名，修改副文件名
 
----
+### 操作说明
 
-This project was generated with [electron-vue](https://github.com/SimulatedGREG/electron-vue)@[45a3e22](https://github.com/SimulatedGREG/electron-vue/tree/45a3e224e7bb8fc71909021ccfdcfec0f461f634) using [vue-cli](https://github.com/vuejs/vue-cli). Documentation about the original structure can be found [here](https://simulatedgreg.gitbooks.io/electron-vue/content/index.html).
+1. 修改文件名
+
+    1.1 添加文件
+
+    [![rs2QDs.png](https://s3.ax1x.com/2020/12/23/rs2QDs.png)](https://imgchr.com/i/rs2QDs)
+
+    1.2 添加动作
+
+    [![rs2ngg.png](https://s3.ax1x.com/2020/12/23/rs2ngg.png)](https://imgchr.com/i/rs2ngg)
+
+    1.3 预览
+
+    [![rs2Muj.png](https://s3.ax1x.com/2020/12/23/rs2Muj.png)](https://imgchr.com/i/rs2Muj)
+
+    1.4 开始
+
+    [![rs2uvQ.png](https://s3.ax1x.com/2020/12/23/rs2uvQ.png)](https://imgchr.com/i/rs2uvQ)
+
+    1.5 效果
+
+    [![rs2s56.md.jpg](https://s3.ax1x.com/2020/12/23/rs2s56.md.jpg)](https://imgchr.com/i/rs2s56)
+
+2. 修改映射文件名
+
+    2.1 添加主文件，添加副文件
+
+    [![rs2DV1.png](https://s3.ax1x.com/2020/12/23/rs2DV1.png)](https://imgchr.com/i/rs2DV1)
+
+    2.2 添加动作（可选）
+
+    2.3 预览
+
+    [![rs2wr9.png](https://s3.ax1x.com/2020/12/23/rs2wr9.png)](https://imgchr.com/i/rs2wr9)
+
+    2.4 开始修改
+
+    [![rs20bR.png](https://s3.ax1x.com/2020/12/23/rs20bR.png)](https://imgchr.com/i/rs20bR)
+
+    2.5 效果
+
+    [![rs2rUx.md.jpg](https://s3.ax1x.com/2020/12/23/rs2rUx.md.jpg)](https://imgchr.com/i/rs2rUx)
+
+### 支持的动作
+
+- 添加递增数字
+- 转换大写
+- 转换小写
+- 添加字符
+- 删除字符
+- 替换字符
+- 截取字符
+- 自定义名称
+  
