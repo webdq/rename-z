@@ -62,7 +62,12 @@
           justify="space-between"
         >
           <a-col class="list-col" :span="colSpan[0]">
-            {{ item.previewName }}
+            <a-popover>
+              <template slot="content">
+                <p>{{ item.previewName }}</p>
+              </template>
+              <span>{{ item.previewName }}</span>
+            </a-popover>
           </a-col>
           <a-col class="list-col" :span="colSpan[1]">
             <a-icon

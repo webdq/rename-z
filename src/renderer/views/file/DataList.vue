@@ -38,9 +38,14 @@
                 <span><a-icon type="info-circle" /> {{ item.name }}</span>
               </a-popover>
             </a-col>
-            <a-col class="list-col" :span="colSpan[1]">{{
-              item.previewName
-            }}</a-col>
+            <a-col class="list-col" :span="colSpan[1]">
+              <a-popover>
+                <template slot="content">
+                  <p>{{ item.previewName }}</p>
+                </template>
+                <span>{{ item.previewName }}</span>
+              </a-popover>
+            </a-col>
             <a-col class="list-col" :span="colSpan[2]">
               <a-button @click="removeFile(item)" size="small" icon="delete"
                 >移除</a-button

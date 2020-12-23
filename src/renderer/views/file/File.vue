@@ -29,7 +29,11 @@
       <DataList @updateFileList="updateFileList" :list="fileList"></DataList>
     </div>
 
-    <UploadLayer :visible="showUpload" @drop="drop"></UploadLayer>
+    <UploadLayer
+      :visible="showUpload"
+      @drop="drop"
+      @dragleave="dragleave"
+    ></UploadLayer>
   </div>
 </template>
 
@@ -56,6 +60,9 @@ export default {
   },
   methods: {
     ...mapActions("action", ["removeAllAction"]),
+    dragleave() {
+      this.showUpload = false;
+    },
     drop(files) {
       this.appendFile(files);
       this.showUpload = false;
